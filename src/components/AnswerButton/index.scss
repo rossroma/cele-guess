@@ -1,0 +1,61 @@
+@import '../../assets/styles/global.scss';
+
+.answer-button-container {
+  margin-top: $spacing-xl;
+  text-align: center;
+
+  .reveal-button {
+    min-width: 200px;
+    height: 48px;
+    font-size: 16px;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    @media (min-width: $breakpoint-mobile) {
+      min-width: 240px;
+      height: 56px;
+      font-size: 18px;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+      }
+    }
+  }
+
+  .answer-display {
+    padding: $spacing-lg;
+    background: white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+    animation: fadeInScale 0.3s ease;
+
+    .celebrity-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: $primary-color;
+      margin: 0;
+
+      @media (min-width: $breakpoint-mobile) {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+// 淡入放大动画
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

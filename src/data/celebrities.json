@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-09",
+  "celebrities": [
+    {
+      "id": "001",
+      "name": "张艺兴",
+      "photo": "https://www.xgccm.com/storage/images/172380381066bf28a2b4923.jpg",
+      "region": 1,
+      "gender": 1,
+      "profession": 1
+    },
+    {
+      "id": "002",
+      "name": "周星驰",
+      "photo": "https://www.xgccm.com/storage/attached/image/20210612/20210612194416031603.jpeg",
+      "region": 2,
+      "gender": 1,
+      "profession": 1
+    },
+    {
+      "id": "003",
+      "name": "杨幂",
+      "photo": "https://www.xgccm.com/storage/attached/image/20211010/20211010204076347634.jpeg",
+      "region": 1,
+      "gender": 2,
+      "profession": 1
+    },
+    {
+      "id": "004",
+      "name": "林志玲",
+      "photo": "https://www.xgccm.com/storage/images/172380381066bf28a2b4923.jpg",
+      "region": 3,
+      "gender": 2,
+      "profession": 1
+    },
+    {
+      "id": "005",
+      "name": "郭德纲",
+      "photo": "https://www.xgccm.com/storage/images/172380381066bf28a2b4923.jpg",
+      "region": 1,
+      "gender": 1,
+      "profession": 2
+    },
+    {
+      "id": "006",
+      "name": "李诞",
+      "photo": "https://www.xgccm.com/storage/images/172380381066bf28a2b4923.jpg",
+      "region": 1,
+      "gender": 1,
+      "profession": 3
+    },
+    {
+      "id": "007",
+      "name": "金城武",
+      "photo": "https://www.xgccm.com/storage/images/172380381066bf28a2b4923.jpg",
+      "region": 3,
+      "gender": 1,
+      "profession": 1
+    },
+    {
+      "id": "008",
+      "name": "杨紫琼",
+      "photo": "https://www.xgccm.com/storage/images/172380381066bf28a2b4923.jpg",
+      "region": 5,
+      "gender": 2,
+      "profession": 1
+    },
+    {
+      "id": "009",
+      "name": "刘德华",
+      "photo": "https://www.xgccm.com/storage/images/172380381066bf28a2b4923.jpg",
+      "region": 2,
+      "gender": 1,
+      "profession": 1
+    },
+    {
+      "id": "010",
+      "name": "范冰冰",
+      "photo": "https://www.xgccm.com/storage/images/172380381066bf28a2b4923.jpg",
+      "region": 1,
+      "gender": 2,
+      "profession": 1
+    }
+  ]
+}

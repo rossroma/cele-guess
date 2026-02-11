@@ -1,0 +1,59 @@
+@import '../../assets/styles/global.scss';
+
+.photo-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  background: white;
+  box-shadow: $shadow-md;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  // 进入动画
+  &.photo-card-enter {
+    animation: slideInFade 0.3s ease;
+  }
+
+  .photo-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: $bg-color;
+  }
+
+  .photo-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: $bg-color;
+    color: $error-color;
+    font-size: 16px;
+  }
+
+  .adm-image {
+    width: 100%;
+    min-height: 400px;
+    max-height: 600px;
+
+    @media (max-width: $breakpoint-mobile - 1) {
+      min-height: 300px;
+      max-height: 500px;
+    }
+  }
+}
+
+// 滑入淡入动画
+@keyframes slideInFade {
+  0% {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
