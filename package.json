@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .ts,.tsx",
-    "format": "prettier --write \"src/**/*.{ts,tsx,scss}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,scss}\"",
+    "generate-data": "node scripts/generateCelebrityData.js"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -34,6 +35,8 @@
     "prettier": "^3.2.5",
     "sass": "^1.71.1",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^3.3.2"
   }
 }
