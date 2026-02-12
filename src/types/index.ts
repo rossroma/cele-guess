@@ -48,6 +48,7 @@ export interface Celebrity {
   id: string;
   name: string;
   photo: string;
+  hdphoto?: string;
   region: Region;
   gender: Gender;
   profession: Profession;

@@ -39,7 +39,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ celebrity }) => {
         </div>
       ) : (
         <Image
-          src={celebrity.photo}
+          src={celebrity.hdphoto || celebrity.photo}
           alt={celebrity.name}
           fit="contain"
           onLoad={() => setLoading(false)}

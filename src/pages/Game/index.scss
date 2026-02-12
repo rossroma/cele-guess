@@ -4,8 +4,28 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: $bg-color;
+  // 移除固定的背景色，改为动态设置
+  // background: $bg-color;
   padding: $spacing-md;
+  position: relative;
+  
+  // 添加一个半透明遮罩层，让内容更清晰
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 0;
+  }
+
+  // 确保内容在遮罩层之上
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
   .game-header {
     display: flex;
@@ -18,6 +38,9 @@
       color: $primary-color;
       font-size: 16px;
       transition: transform 0.2s ease;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: $border-radius-md;
+      padding: $spacing-sm $spacing-md;
 
       &:active {
         transform: scale(0.95);
@@ -27,6 +50,9 @@
     .viewed-count {
       font-size: 14px;
       color: $text-secondary;
+      background: rgba(255, 255, 255, 0.9);
+      padding: $spacing-sm $spacing-md;
+      border-radius: $border-radius-md;
     }
   }
 

@@ -8,6 +8,7 @@ import { useGameStore } from '../../store/useGameStore';
 import { useCelebrities } from '../../hooks/useCelebrities';
 import { useSwipe } from '../../hooks/useSwipe';
 import { useResponsive } from '../../hooks/useResponsive';
+import { useImageColors } from '../../hooks/useImageColors';
 import { getRandomCelebrity } from '../../utils/random';
 import './index.scss';
 
@@ -25,6 +26,9 @@ const Game: React.FC = () => {
     goNext,
     goPrevious
   } = useGameStore();
+
+  // 提取图片颜色用于背景
+  const imageColors = useImageColors(currentCelebrity?.hdphoto || currentCelebrity?.photo);
 
   // 加载随机明星
   const loadRandomCelebrity = useCallback(() => {
@@ -102,8 +106,14 @@ const Game: React.FC = () => {
     return <div className="game-loading">加载中...</div>;
   }
 
+  // 动态背景样式
+  const backgroundStyle = {
+    background: `linear-gradient(135deg, ${imageColors.primary} 0%, ${imageColors.secondary} 50%, ${imageColors.primary} 100%)`,
+    transition: 'background 0.8s ease-in-out'
+  };
+
   return (
-    <div className="game-page" {...swipeHandlers}>
+    <div className="game-page" {...swipeHandlers} style={backgroundStyle}>
       <div className="game-header">
         <Button
           fill="none"

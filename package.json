@@ -12,12 +12,14 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
-    "generate-data": "node scripts/generateCelebrityData.js"
+    "generate-data": "node scripts/generateCelebrityData.js",
+    "fetch-hd-photos": "node scripts/fetchHDPhotos.js"
   },
   "dependencies": {
     "antd-mobile": "^5.35.0",
     "antd-mobile-icons": "^0.3.0",
     "classnames": "^2.5.1",
+    "colorthief": "^2.6.0",
     "lodash-es": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
