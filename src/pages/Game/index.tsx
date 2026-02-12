@@ -19,9 +19,11 @@ const Game: React.FC = () => {
     currentCelebrity,
     isAnswerVisible,
     viewedCount,
-    setCurrentCelebrity,
     showAnswer,
-    incrementViewedCount
+    incrementViewedCount,
+    addToHistory,
+    goNext,
+    goPrevious
   } = useGameStore();
 
   // 加载随机明星
@@ -32,7 +34,7 @@ const Game: React.FC = () => {
     );
 
     if (celebrity) {
-      setCurrentCelebrity(celebrity);
+      addToHistory(celebrity);
       incrementViewedCount();
     } else {
       Toast.show({
@@ -40,7 +42,26 @@ const Game: React.FC = () => {
         position: 'top'
       });
     }
-  }, [filteredCelebrities, currentCelebrity, setCurrentCelebrity, incrementViewedCount]);
+  }, [filteredCelebrities, currentCelebrity, addToHistory, incrementViewedCount]);
+
+  // 下一张
+  const handleNext = useCallback(() => {
+    const needsNewCelebrity = goNext();
+    if (needsNewCelebrity) {
+      loadRandomCelebrity();
+    }
+  }, [goNext, loadRandomCelebrity]);
+
+  // 上一张
+  const handlePrevious = useCallback(() => {
+    const success = goPrevious();
+    if (!success) {
+      Toast.show({
+        content: '已经是第一张了',
+        position: 'top'
+      });
+    }
+  }, [goPrevious]);
 
   // 初始化加载
   useEffect(() => {
@@ -52,8 +73,10 @@ const Game: React.FC = () => {
   // 键盘事件监听
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-        loadRandomCelebrity();
+      if (e.key === 'ArrowLeft') {
+        handlePrevious(); // 左箭头：上一张
+      } else if (e.key === 'ArrowRight') {
+        handleNext(); // 右箭头：下一张
       } else if (e.key === ' ' || e.key === 'Enter') {
         if (!isAnswerVisible) {
           showAnswer();
@@ -63,12 +86,12 @@ const Game: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isAnswerVisible, showAnswer, loadRandomCelebrity]);
+  }, [isAnswerVisible, showAnswer, handleNext, handlePrevious]);
 
   // 滑动手势
   const swipeHandlers = useSwipe({
-    onSwipeLeft: loadRandomCelebrity,
-    onSwipeRight: loadRandomCelebrity
+    onSwipeLeft: handleNext,      // 左滑：下一张
+    onSwipeRight: handlePrevious  // 右滑：上一张
   });
 
   const handleBack = () => {
@@ -106,14 +129,14 @@ const Game: React.FC = () => {
             <Button
               className="nav-button prev"
               shape="rounded"
-              onClick={loadRandomCelebrity}
+              onClick={handlePrevious}
             >
               <LeftOutline /> 上一张
             </Button>
             <Button
               className="nav-button next"
               shape="rounded"
-              onClick={loadRandomCelebrity}
+              onClick={handleNext}
             >
               下一张 <RightOutline />
             </Button>

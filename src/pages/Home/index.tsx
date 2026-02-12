@@ -41,7 +41,7 @@ const Home: React.FC = () => {
           开始游戏
         </Button>
 
-        <Badge content={hasActiveFilters() ? '•' : null} color="red">
+        {/* <Badge content={hasActiveFilters() ? '•' : null} color="red">
           <Button
             className="filter-button"
             fill="outline"
@@ -49,10 +49,10 @@ const Home: React.FC = () => {
           >
             <FilterOutline /> 筛选条件
           </Button>
-        </Badge>
+        </Badge> */}
 
         <div className="stats">
-          可玩明星: {filteredCount} / {totalCount}
+          {/* 可玩明星: {filteredCount} / {totalCount} */}
         </div>
       </div>
 

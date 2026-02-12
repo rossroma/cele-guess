@@ -11,24 +11,24 @@ export const validateCelebrity = (celebrity: any): celebrity is Celebrity => {
   }
 
   // 验证枚举值
-  const validRegions = Object.values(RegionEnum).filter(v => typeof v === 'number');
-  const validGenders = Object.values(GenderEnum).filter(v => typeof v === 'number');
-  const validProfessions = Object.values(ProfessionEnum).filter(v => typeof v === 'number');
+  // const validRegions = Object.values(RegionEnum).filter(v => typeof v === 'number');
+  // const validGenders = Object.values(GenderEnum).filter(v => typeof v === 'number');
+  // const validProfessions = Object.values(ProfessionEnum).filter(v => typeof v === 'number');
 
-  if (!validRegions.includes(celebrity.region)) {
-    console.error('Invalid region', celebrity);
-    return false;
-  }
+  // if (!validRegions.includes(celebrity.region)) {
+  //   console.error('Invalid region', celebrity);
+  //   return false;
+  // }
 
-  if (!validGenders.includes(celebrity.gender)) {
-    console.error('Invalid gender', celebrity);
-    return false;
-  }
+  // if (!validGenders.includes(celebrity.gender)) {
+  //   console.error('Invalid gender', celebrity);
+  //   return false;
+  // }
 
-  if (!validProfessions.includes(celebrity.profession)) {
-    console.error('Invalid profession', celebrity);
-    return false;
-  }
+  // if (!validProfessions.includes(celebrity.profession)) {
+  //   console.error('Invalid profession', celebrity);
+  //   return false;
+  // }
 
   return true;
 };

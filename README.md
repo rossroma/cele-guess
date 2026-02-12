@@ -2,6 +2,12 @@
 
 一款轻量级的网页小游戏，通过展示明星照片让用户猜测明星姓名，适用于移动端和PC端。
 
+## 快速部署
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/celeguess&project-name=celeguess&repository-name=celeguess)
+
+点击上方按钮即可一键部署到 Vercel。
+
 ## 功能特性
 
 - **照片展示**: 随机显示明星照片
