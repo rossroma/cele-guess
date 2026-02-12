@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Badge, Toast } from 'antd-mobile';
-import { FilterOutline } from 'antd-mobile-icons';
+import { Button, Toast } from 'antd-mobile';
 import FilterPanel from '../../components/FilterPanel';
-import { useFilterStore } from '../../store/useFilterStore';
 import { useCelebrities } from '../../hooks/useCelebrities';
 import './index.scss';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [filterVisible, setFilterVisible] = useState(false);
-  const { hasActiveFilters } = useFilterStore();
-  const { filteredCount, totalCount } = useCelebrities();
+  const { filteredCount } = useCelebrities();
 
   const handleStart = () => {
     if (filteredCount === 0) {

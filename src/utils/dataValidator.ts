@@ -1,4 +1,4 @@
-import { RegionEnum, GenderEnum, ProfessionEnum, type Celebrity } from '../types';
+import { type Celebrity } from '../types';
 
 /**
  * 验证明星数据的有效性
