@@ -4,7 +4,7 @@
 
 ## 快速部署
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/celeguess&project-name=celeguess&repository-name=celeguess)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/rossroma/cele-guess&project-name=celeguess&repository-name=celeguess)
 
 点击上方按钮即可一键部署到 Vercel。
 
