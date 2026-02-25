@@ -1,0 +1,45 @@
+@import '../../assets/styles/global.scss';
+
+.char-pool {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 6px;
+  padding: 8px 12px 12px;
+}
+
+.char-btn {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: $border-radius-sm;
+  background: rgba(255, 255, 255, 0.92);
+  color: $text-color;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s, opacity 0.15s;
+  box-shadow: $shadow-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+
+  &:active:not(:disabled) {
+    transform: scale(0.88);
+    background: $primary-color;
+    color: white;
+  }
+
+  &.char-btn-used {
+    background: rgba(180, 180, 180, 0.25);
+    color: rgba(120, 120, 120, 0.45);
+    box-shadow: none;
+    cursor: default;
+    text-decoration: line-through;
+  }
+
+  &.char-btn-locked {
+    opacity: 0.55;
+    cursor: default;
+  }
+}

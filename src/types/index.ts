@@ -64,3 +64,16 @@ export interface UserPreferences {
   lastFilters: FilterOptions;
   lastUpdated: number;
 }
+
+// 计分模式相关类型
+export type ScoreGamePhase = 'idle' | 'playing' | 'roundEnd' | 'gameEnd';
+
+// null=正常, 'correct'=答对, 'wrong-retry'=答错可重试, 'wrong-revealed'=答错已揭示
+export type FeedbackType = null | 'correct' | 'wrong-retry' | 'wrong-revealed';
+
+export interface ScoreRound {
+  celebrity: Celebrity;
+  wrongAttempts: number;  // 0=第一次对, 1=第二次对, 2=未答对被揭示
+  scoreEarned: number;
+  isCorrect: boolean;
+}

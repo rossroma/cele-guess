@@ -21,6 +21,10 @@ const Home: React.FC = () => {
     navigate('/game');
   };
 
+  const handleScoreMode = () => {
+    navigate('/score-game');
+  };
+
   return (
     <div className="home-page">
       <div className="home-header">
@@ -35,7 +39,14 @@ const Home: React.FC = () => {
           color="primary"
           onClick={handleStart}
         >
-          开始游戏
+          自由浏览模式
+        </Button>
+        <Button
+          className="start-button score-mode-button"
+          size="large"
+          onClick={handleScoreMode}
+        >
+          🏆 计分模式
         </Button>
 
         {/* <Badge content={hasActiveFilters() ? '•' : null} color="red">

@@ -55,6 +55,16 @@
       }
     }
 
+    .score-mode-button {
+      background: linear-gradient(135deg, #ff9a3c, #ff6b35);
+      color: white;
+      border: none;
+
+      &:active {
+        opacity: 0.9;
+      }
+    }
+
     .filter-button {
       height: 48px;
       border-radius: $border-radius-md;
