@@ -23,8 +23,9 @@ const ScoreGame: React.FC = () => {
     celebrities,
     currentIndex,
     charPool,
-    usedPoolIndices,
-    selectedChars,
+    slots,
+    slotPoolIndices,
+    targetSlotIndex,
     wrongAttempts,
     feedbackType,
     rounds,
@@ -33,10 +34,16 @@ const ScoreGame: React.FC = () => {
     isNewHighScore,
     initGame,
     selectChar,
+    setTargetSlot,
     clearForRetry,
     nextRound,
     resetGame,
   } = useScoreGameStore();
+
+  // 当前被占用的字符池位置（排除瞄准槽，允许替换）
+  const usedPoolIndices = slotPoolIndices.filter(
+    (idx, slotIdx): idx is number => idx !== null && slotIdx !== targetSlotIndex
+  );
 
   const celebrity = celebrities[currentIndex] ?? null;
   const imageColors = useImageColors(celebrity?.hdphoto || celebrity?.photo);
@@ -212,8 +219,10 @@ const ScoreGame: React.FC = () => {
       <div className="sg-name-area">
         <NameSlots
           name={celebrity.name}
-          selectedChars={selectedChars}
+          slots={slots}
           feedbackType={feedbackType}
+          targetSlotIndex={targetSlotIndex}
+          onSlotClick={setTargetSlot}
           onRetryAnimationEnd={clearForRetry}
         />
       </div>

@@ -34,6 +34,18 @@
     border: 2px solid $primary-color;
     color: $text-color;
     box-shadow: 0 2px 8px rgba(22, 119, 255, 0.2);
+    cursor: pointer;
+
+    &:active { transform: scale(0.92); }
+  }
+
+  &.slot-targeted {
+    background: #fff7e6;
+    border: 2px solid $warning-color;
+    color: $text-color;
+    box-shadow: 0 0 0 3px rgba(250, 173, 20, 0.35);
+    cursor: pointer;
+    animation: targetPulse 0.9s ease-in-out infinite;
   }
 
   &.slot-correct {
@@ -58,6 +70,11 @@
     border: 2px solid $warning-color;
     color: $warning-color;
   }
+}
+
+@keyframes targetPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(250, 173, 20, 0.35); }
+  50% { box-shadow: 0 0 0 5px rgba(250, 173, 20, 0.15); }
 }
 
 @keyframes correctPop {

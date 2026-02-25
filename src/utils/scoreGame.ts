@@ -47,10 +47,18 @@ export const getNameType = (name: string): NameType => {
 };
 
 /**
- * 过滤可参与计分模式的明星：去除混杂姓名（含·或中英混合）
+ * 过滤可参与计分模式的明星：
+ * - 去除混杂姓名（含·或中英混合）
+ * - 去除超过 5 个字的姓名（太长，方格放不下）
+ * - 去除只有 1 个字的姓名（太短，无意义）
  */
 export const filterScorableCelebrities = (celebrities: Celebrity[]): Celebrity[] =>
-  celebrities.filter((c) => getNameType(c.name) !== 'mixed');
+  celebrities.filter((c) => {
+    const type = getNameType(c.name);
+    if (type === 'mixed') return false;
+    const len = c.name.length;
+    return len >= 2 && len <= 5;
+  });
 
 /**
  * 从所有明星姓名中抽取干扰字，生成指定大小的字符池。
